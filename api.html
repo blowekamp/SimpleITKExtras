@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>API &#8212; SimpleITK Utilities v0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to SimpleITK Utilities’ documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-SimpleITK.utilities">
+<span id="api"></span><h1>API<a class="headerlink" href="#module-SimpleITK.utilities" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="SimpleITK.utilities.Logger">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SimpleITK.utilities.</span></span><span class="sig-name descname"><span class="pre">Logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger:</span> <span class="pre">~logging.Logger</span> <span class="pre">=</span> <span class="pre">&lt;Logger</span> <span class="pre">SimpleITK</span> <span class="pre">(WARNING)&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleITK.utilities.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adapts SimpleITK messages to be handled by a Python Logger object.</p>
+<p>Allows using the logging module to control the handling of messages coming
+from ITK and SimpleTK. Messages such as debug and warnings are handled by
+objects derived from sitk.LoggerBase.</p>
+<p>The LoggerBase.SetAsGlobalITKLogger method must be called to enable
+SimpleITK messages to use the logger.</p>
+<p>The Python logger module adds a second layer of control for the logging
+level in addition to the controls already in SimpleITK.</p>
+<p>The “Debug” property of a SimpleITK object must be enabled (if
+available) and the support from the Python “logging flow” hierarchy
+to handle debug messages from a SimpleITK object.</p>
+<p>Warning messages from SimpleITK are globally disabled with
+ProcessObject:GlobalWarningDisplayOff.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SimpleITK.utilities.Logger.DisplayDebugText">
+<span class="sig-name descname"><span class="pre">DisplayDebugText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">LoggerBase</span> <span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">char</span> <span class="pre">const</span> <span class="pre">*</span> <span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleITK.utilities.Logger.DisplayDebugText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SimpleITK.utilities.Logger.DisplayErrorText">
+<span class="sig-name descname"><span class="pre">DisplayErrorText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">LoggerBase</span> <span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">char</span> <span class="pre">const</span> <span class="pre">*</span> <span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleITK.utilities.Logger.DisplayErrorText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SimpleITK.utilities.Logger.DisplayGenericOutputText">
+<span class="sig-name descname"><span class="pre">DisplayGenericOutputText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">LoggerBase</span> <span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">char</span> <span class="pre">const</span> <span class="pre">*</span> <span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleITK.utilities.Logger.DisplayGenericOutputText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SimpleITK.utilities.Logger.DisplayText">
+<span class="sig-name descname"><span class="pre">DisplayText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">LoggerBase</span> <span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">char</span> <span class="pre">const</span> <span class="pre">*</span> <span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleITK.utilities.Logger.DisplayText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SimpleITK.utilities.Logger.DisplayWarningText">
+<span class="sig-name descname"><span class="pre">DisplayWarningText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">LoggerBase</span> <span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">char</span> <span class="pre">const</span> <span class="pre">*</span> <span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleITK.utilities.Logger.DisplayWarningText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SimpleITK.utilities.make_isotropic">
+<span class="sig-prename descclassname"><span class="pre">SimpleITK.utilities.</span></span><span class="sig-name descname"><span class="pre">make_isotropic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">standardize_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleITK.utilities.make_isotropic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Many file formats (e.g. jpg, png,…) expect the pixels to be isotropic, same
+spacing for all axes. Saving non-isotropic data in these formats will result in
+distorted images. This function makes an image isotropic via resampling, if needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>SimpleITK.Image</em>) – (SimpleITK.Image): Input image.</p></li>
+<li><p><strong>interpolator</strong> – By default the function uses a linear interpolator. For
+label images one should use the sitkNearestNeighbor interpolator
+so as not to introduce non-existent labels.</p></li>
+<li><p><strong>spacing</strong> (<em>float</em>) – Desired spacing. If none given then use the smallest spacing from
+the original image.</p></li>
+<li><p><strong>default_value</strong> – Desired pixel value for resampled points that fall
+outside the original image (e.g. HU value for air, -1000,
+when image is CT).</p></li>
+<li><p><strong>standardize_axes</strong> (<em>bool</em>) – If the original image axes were not the standard ones, i.e. non
+identity cosine matrix, we may want to resample it to have standard
+axes. To do that, set this parameter to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An image with isotropic spacing which occupies the same region in space as
+the input image.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>SimpleITK.Image</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SimpleITK.utilities.sitk2vtk">
+<span class="sig-prename descclassname"><span class="pre">SimpleITK.utilities.</span></span><span class="sig-name descname"><span class="pre">sitk2vtk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debugOn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleITK.utilities.sitk2vtk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to convert a SimpleITK image to a VTK image.
+Written by David T. Chen from the National Institute of Allergy
+and Infectious Diseases, <a class="reference external" href="mailto:dchen&#37;&#52;&#48;mail&#46;nih&#46;gov">dchen<span>&#64;</span>mail<span>&#46;</span>nih<span>&#46;</span>gov</a>.
+It is covered by the Apache License, Version 2.0:
+<a class="reference external" href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SimpleITK.utilities.slice_by_slice">
+<span class="sig-prename descclassname"><span class="pre">SimpleITK.utilities.</span></span><span class="sig-name descname"><span class="pre">slice_by_slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleITK.utilities.slice_by_slice" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function decorator which executes func on each 3D sub-volume and
+<em>in-place</em> pastes the results into the input image. The input image type
+and the output image type are required to be the same type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>func</strong> – A function which take a SimpleITK Image as it’s first</p>
+</dd>
+</dl>
+<p>argument and returns an Image as results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A decorated function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SimpleITK.utilities.vtk2sitk">
+<span class="sig-prename descclassname"><span class="pre">SimpleITK.utilities.</span></span><span class="sig-name descname"><span class="pre">vtk2sitk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vtkimg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleITK.utilities.vtk2sitk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a VTK image, returns a SimpleITK image.</p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">SimpleITK Utilities</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#SimpleITK.utilities.Logger"><code class="docutils literal notranslate"><span class="pre">Logger</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SimpleITK.utilities.make_isotropic"><code class="docutils literal notranslate"><span class="pre">make_isotropic()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SimpleITK.utilities.sitk2vtk"><code class="docutils literal notranslate"><span class="pre">sitk2vtk()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SimpleITK.utilities.slice_by_slice"><code class="docutils literal notranslate"><span class="pre">slice_by_slice()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SimpleITK.utilities.vtk2sitk"><code class="docutils literal notranslate"><span class="pre">vtk2sitk()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to SimpleITK Utilities’ documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Bradley Lowekamp.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/api.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
